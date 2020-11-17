@@ -58,13 +58,13 @@ struct ContentView: View {
             return
         }
         if target == givenInt {
-            msg = "You guessed correctly!"
-        }
-        else if target > givenInt {
-            msg = "Guess lower!"
+            msg = "You guessed correctly! I've thought of a new number"
         }
         else if target > givenInt {
             msg = "Guess higher!"
+        }
+        else if target < givenInt {
+            msg = "Guess lower!"
         }
     }
 }
