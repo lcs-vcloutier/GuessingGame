@@ -15,37 +15,46 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack {
-                Text("I'm thinking of a number between 1 and 100")
+                Text("Guess a number between 1 and 100")
+                    .font(.title2)
+                    .fontWeight(.bold)
                 TextField("Input guess here", text: $guess)
                     .keyboardType(.decimalPad)
                 
-                Button(action: {checkGuess()}, label: {
+                Button(action: {}, label: {
                     Text("Guess")
+                        .font(.title2)
+                        .fontWeight(.bold)
                 })
-                Text("You guessed \(guess)")
+                .foregroundColor(Color.white)
+                .padding()
+                .background(Color.blue)
+                .cornerRadius(5)
+Spacer()
+                   
             }
-            .navigationTitle("Guessing Game")
             .padding()
+            .navigationTitle("Guessing Game")
         }
 
 //    .alert(isPresented: $alert, content: {
 //            Alert(title: Text("Guessing Game"), message: Text("\(msg)"), dismissButton: .default(Text("OK")))
 //        })
     }
-    func checkGuess() {
-        let guess2 = Int(guess)!
-        var msg = ""
-        alert = true
-        if guess2 == target {
-            msg = "You Got It!!!!"
-        }
-        else if guess2 > target {
-            msg = "Guess lower"
-        }
-        else if guess2 < target {
-            msg = "Guess lower"
-        }
-    }
+//    func checkGuess() {
+//        let guess2 = Int(guess)!
+//        var msg = ""
+//        alert = true
+//        if guess2 == target {
+//            msg = "You Got It!!!!"
+//        }
+//        else if guess2 > target {
+//            msg = "Guess lower"
+//        }
+//        else if guess2 < target {
+//            msg = "Guess lower"
+//        }
+//    }
 }
 
 struct ContentView_Previews: PreviewProvider {
