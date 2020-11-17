@@ -49,21 +49,21 @@ struct ContentView: View {
     //check what user guessed against comp
     func checkGuess() {
         // is the guess and INT in expected range
-        guard let target = Int(guess) else {
+        guard let givenInt = Int(guess) else {
             msg = "Please enter an integer"
             return
         }
-        guard target > 0, target < 100 else {
+        guard givenInt > 0, givenInt < 100 else {
             msg = "Please enter an Integer in the range of 1 to 100"
             return
         }
-        if Int(guess) == target {
+        if target == givenInt {
             msg = "You guessed correctly!"
         }
-        else if Int(guess)! > target {
+        else if target > givenInt {
             msg = "Guess lower!"
         }
-        else if Int(guess)! > target {
+        else if target > givenInt {
             msg = "Guess higher!"
         }
     }
