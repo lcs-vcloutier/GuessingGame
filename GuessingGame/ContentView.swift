@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    var target = Int.random(in: 1..<100)
+    let target = Int.random(in: 1..<100)
     @State private var guess = ""
     @State private var msg = ""
 
@@ -57,15 +57,15 @@ struct ContentView: View {
             msg = "Please enter an Integer in the range of 1 to 100"
             return
         }
-//        if guess == target {
-//            msg = "You guessed correctly!"
-//        }
-//        else if guess > target {
-//            msg = "Guess lower!"
-//        }
-//        else if guess > target {
-//            msg = "Guess higher!"
-//        }
+        if Int(guess) == target {
+            msg = "You guessed correctly!"
+        }
+        else if Int(guess)! > target {
+            msg = "Guess lower!"
+        }
+        else if Int(guess)! > target {
+            msg = "Guess higher!"
+        }
     }
 }
 
