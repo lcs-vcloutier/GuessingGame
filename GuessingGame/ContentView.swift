@@ -57,6 +57,7 @@ struct ContentView: View {
             msg = "Please enter an Integer in the range of 1 to 100"
             return
         }
+        if !guess.isEmpty {self.guess = ""}
         if target == givenInt {
             msg = "You guessed correctly! I've thought of a new number"
         }
@@ -74,4 +75,5 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
 
